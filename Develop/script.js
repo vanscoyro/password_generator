@@ -60,6 +60,48 @@ function generatePassword(){
       return pwd;
       }
 
+    //upper case choice variations 
+
+    //only upper case true condition
+    if(lowerCase == false && (upperCase == true) && (numericValue==false) && (specialCharacter==false)){
+      charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+      pwd = "";
+      for (var i = 0, n = charset.length; i < length; i++) {
+          pwd += charset.charAt(Math.floor(Math.random() * n));
+        }
+      return pwd;
+      }
+    
+    //upper case and numeric value true, lower case and special character false condition
+    if(lowerCase == false && (upperCase == true) && (numericValue == true) && (specialCharacter == false)){
+      charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+      pwd = "";
+      for (var i = 0, n = charset.length; i < length; i++) {
+          pwd += charset.charAt(Math.floor(Math.random() * n));
+        }
+      return pwd;
+      }
+
+    //upper case and special character true, lower case and numeric value false condition
+    if(lowerCase == false && (upperCase == true) && (numericValue == false) && (specialCharacter == true)){
+      charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZ !#$%&'()*+,-./:;<=>?@[\]^_`{|}~",
+      pwd = "";
+      for (var i = 0, n = charset.length; i < length; i++) {
+          pwd += charset.charAt(Math.floor(Math.random() * n));
+        }
+      return pwd;
+      }
+
+    //upper case, numeric value, and special character true, lower case false condition
+    if(lowerCase == false && (upperCase == true) && (numericValue == true) && (specialCharacter == true)){
+      charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 !#$%&'()*+,-./:;<=>?@[\]^_`{|}~",
+      pwd = "";
+      for (var i = 0, n = charset.length; i < length; i++) {
+          pwd += charset.charAt(Math.floor(Math.random() * n));
+        }
+      return pwd;
+      }
+
   }else(alert("please enter a valid numeric value between 8 and 128"))
 
 }
