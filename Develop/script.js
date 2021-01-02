@@ -60,7 +60,7 @@ function generatePassword(){
       return pwd;
       }
 
-    //upper case choice variations 
+  //upper case choice variations 
 
     //only upper case true condition
     if(lowerCase == false && (upperCase == true) && (numericValue==false) && (specialCharacter==false)){
@@ -101,6 +101,40 @@ function generatePassword(){
         }
       return pwd;
       }
+
+  //numeric value choice variations 
+
+    //only numeric value true condition
+    if(lowerCase == false && (upperCase == false) && (numericValue == true) && (specialCharacter == false)){
+      charset = "0123456789",
+      pwd = "";
+      for (var i = 0, n = charset.length; i < length; i++) {
+          pwd += charset.charAt(Math.floor(Math.random() * n));
+        }
+      return pwd;
+      }
+
+    //only numeric value and lower case true condition
+    if(lowerCase == true && (upperCase == false) && (numericValue == true) && (specialCharacter == false)){
+      charset = "abcdefghijklmnopqrstuvwxyz0123456789",
+      pwd = "";
+      for (var i = 0, n = charset.length; i < length; i++) {
+          pwd += charset.charAt(Math.floor(Math.random() * n));
+        }
+      return pwd;
+      }      
+
+    //numeric value and special character true , lower case and upper case false condition
+
+    if(lowerCase == false && (upperCase == false) && (numericValue == true) && (specialCharacter == true)){
+      charset = "0123456789 !#$%&'()*+,-./:;<=>?@[\]^_`{|}~",
+      pwd = "";
+      for (var i = 0, n = charset.length; i < length; i++) {
+          pwd += charset.charAt(Math.floor(Math.random() * n));
+        }
+      return pwd;
+      }
+
 
   }else(alert("please enter a valid numeric value between 8 and 128"))
 
