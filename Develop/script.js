@@ -135,7 +135,7 @@ function generatePassword(){
       return pwd;
       }
 
-    //special character true choice variations 
+  //special character true choice variations 
 
     //special character only true condition
 
@@ -168,6 +168,25 @@ function generatePassword(){
         }
       return pwd;
       }
+
+    
+      //all true condition
+        if(lowerCase == true && (upperCase == true) && (numericValue == true) && (specialCharacter == true)){
+        charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 !#$%&'()*+,-./:;<=>?@[\]^_`{|}~",
+        pwd = "";
+        for (var i = 0, n = charset.length; i < length; i++) {
+            pwd += charset.charAt(Math.floor(Math.random() * n));
+          }
+        return pwd;
+        }
+    
+      //all false condition
+        if(lowerCase == false && (upperCase == false) && (numericValue == false) && (specialCharacter == false)){
+        alert("Make confirm at least one option...")
+        pwd = "please confirm at least one condition";
+        return pwd;
+        }
+        
 
 
   }else(alert("please enter a valid numeric value between 8 and 128"))
