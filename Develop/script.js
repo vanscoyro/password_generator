@@ -189,7 +189,7 @@ function generatePassword(){
         
 
 
-  }else(alert("please enter a valid numeric value between 8 and 128"))
+  }else(alert("please enter a valid numeric value between 8 and 128") (pwd="enter a value"))
 
 }
 
